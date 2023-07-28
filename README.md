@@ -139,7 +139,7 @@ For **Designing the UI Backgrounds**, I put my skills to action using designing 
 
 Once the backgrounds were finalised, I used the Tkinter and Serial Library of python to create a **Working UI** for both the dash and the pit screen.Using the Tkinter module, I was able to create *live graphs of the incoming date, a percentage based throttle bar as well as a analog-type speedometer*.The task of **Logging the Data** for future use was tackled using the csv and logging modules of python.Inorder to make inspection of the logged data more convenient, I created another program to display the logged data in a graphical manner(**Graph Logging**).
 
-Added to this, I also worked extensively upon the Hall Effect Sensor which was earliar being used to determine the wheel RPM of the vehicle
+Added to this, I also worked extensively upon the **Hall Effect Sensor** which was earliar being used to determine the wheel RPM of the vehicle
 
 
 ## Credits
