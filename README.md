@@ -1,6 +1,7 @@
 # Data-Acquisition-System
  A data acquisition system (DAQ) created for the Formula Student Car of Team Defianz Racing wherein we take data from various sensors and display them on dashboard screen as well as the pit screen(via telemetry) while logging it at the same time for future references.
 
+This repository is a combination of the already exiting repositories of Formula-Student-Daq-Arduino-Code, Formula-Student-Dashboard-GUI and the Formula-Student-PitScreen-UI.
 
 ## Table of Contents
 - [Sensors-Used](#sensors-used)
@@ -17,7 +18,8 @@
 
 ## Sensors Used
 We use the following sensors from which the data needs to be extracted:
-1. **Motor Controller:** DTI HV 500 LC (https://drivetraininnovation.com/webshop/inverters/dti-hv-500-liquid-cooled)
+1. **Motor Controller:** DTI HV 500 LC (https://drivetraininnovation.com/webshop/inverters/dti-hv-500-liquid-cooled).
+Refer to *HV-500 CAN Manual 2.3*
 <img src="./resources/readme images/mc.jpg" alt="mc" width="300"/>
 
 
@@ -120,7 +122,9 @@ python3 'folder-name' '.py file-name'
 This is a list of some errors that were faced during implementation of the python UI code while recieving data from the arduino
 
 1. **Utf Decoding Error**- Baud rate of arduino and ui code SER.read should be same.if errer still persists,then can fixed by adding condition to decode only if decoding can be done(see main_dash.py).
-2. **Canbus Fail** - Mcp to canbus or mcp to arduino connections are loose and can be fixed by tightning the hardware connections
+2. **Canbus Fail** - "Canbus fail" error might take place when one of the following takes place. 
+   1. **Faulty CS Pin**: CS pin is not declared correcty in the ide code. The Chip Select pins are special pins that can only be connected to pre defined pins of the arduino which might not be of the same number on different types of arduinos. So cross check from the internet that the code CS pin is correct.
+   2. **Loose Connections**: Mcp to canbus or mcp to arduino connections are either loose or wrongly connected and can be fixed by tightning the hardware connections
 3. **Port Busy**- Some other application is utilizing the port.it is probably the arduino ide running in background,can be fixed by closing it’s serial moniter.The error still might persist when no application seems to be using specified port, then try restaring your laptop.
 4. **Arduino not detected** - wrong port name declared in ui ser.read(see main_dash.py).
 5. **Data not refreshing in gui** - data list recieved from arduino is shorter than the data being displayed in the ui(see main_dash.py).This can also happen if there is loosening of the mcp to arduino connections due to which data is no longer being recieved.
