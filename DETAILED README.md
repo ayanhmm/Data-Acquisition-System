@@ -1,18 +1,20 @@
 # Data Acquisition System
  A detailed insight into the various sensors and codes implimented to creare our fully functional Formula Student Data Acquisition System
 
+<!-- ---------------------------------------------------------------------------------------------------------- -->
 ## Table of Contents
 - [Sensors Used](#sensors-used)
 - [Data Gathering](#data-gathering)
 - [Getting DAQ Ready](#getting-daq-ready)
 - [Motor Controller MC](#motor-controller-mc)
-- [Battery Management System BMS](#battery-management-system-bms)
-- [Hall Effect Sensor](#the-hall-effect-sensor)
-- [Mass Flow Rate (MFR)](#mass-flow-rate(mfr))
+- [BMS Battery Management System](#bms-battery-management-system)
+- [The Hall Effect Sensor](#the-hall-effect-sensor)
+- [Mass Flow Rate (MFR)](#mass-flow-rate-mfr)
 - [User interface](#user-interface)
 - [Telemetry](#telemetry)
 - [Credits](#credits)
-
+  
+<!-- ---------------------------------------------------------------------------------------------------------- -->
 ## Sensors Used
 We use the following sensors from which the data needs to be extracted:
 <details><summary> Motor Controller (MC)</summary> 
@@ -40,7 +42,7 @@ Used to determine the RPM of the Wheels.Became obselete once we figured out to o
 <p align="center"><img src="./resources/readme images/hall effect.jpeg" alt="mfr" width="300"/></p>
 </details>
 
-
+<!-- ---------------------------------------------------------------------------------------------------------- -->
 ## Data Gathering
 We fetch the following data:
 <details><summary> From Motor Controller  </summary>
@@ -64,7 +66,7 @@ We fetch the following data:
 Speed of the fluid in the cooling system tubes (unit: L/minute)
  </details>
 
-
+<!-- ---------------------------------------------------------------------------------------------------------- -->
 ## Getting DAQ Ready
 
 <details><summary>  Hardware, Softwares and Modules </summary>
@@ -120,7 +122,7 @@ python3 'folder-name' '.py file-name'
 <img src="./resources/readme images/working ui.png" alt="Dash display" />
 </details>
 
-
+<!-- ---------------------------------------------------------------------------------------------------------- -->
 # Motor Controller MC:
 ### Credits: **Harsh Srivastava** (https://github.com/harshsrivastava0)
 
@@ -149,7 +151,9 @@ This MCP2515 module is used to communicate the raw canbus data to the arduino bo
 And voila! you're good to go.
  </details>
 
-# Battery Management System BMS :
+
+<!-- ---------------------------------------------------------------------------------------------------------- -->
+# BMS Battery Management System:
 ### Credits: **Satwik Jain** (https://github.com/satwikjain23)
 A battery management system (BMS) is any electronic system that manages a rechargeable battery, such as by protecting the battery from operating outside its safe operating area, monitoring its state, calculating secondary data, reporting that data, controlling its environment, balancing it.
 <p align="center"><img src="./resources/readme images/bms.jpg" alt="bms" width="300"/>></p>
@@ -213,8 +217,8 @@ Convert the parameters **DTC FLAGS #1** and **DTC FLAGS #2** to binary and check
 - https://www.orionbms.com/general/retrieving-data-obd2-canbus/
 </details>
 
-
-# The Hall Effect Sensor :
+<!-- ---------------------------------------------------------------------------------------------------------- -->
+# The Hall Effect Sensor
 ### Credits:  **Ayan Mahajan** (https://github.com/ayanhmm)
 Used to determine the RPM of the Wheels.Became obselete once we figured out to obtain the same via motor controller.
 We use the  Honeywell LCZ Series Hall-effect Zero Speed Sensor.
@@ -230,8 +234,10 @@ Hall effect sensor is used to detect when magnetic materials(primarily iron) are
 rotating wheel and it is able to sense each rim that passes from front of it. the time between two consecutive rims and using the distance between them, we calculate the RPM which along with tyre radius gives Speed
 <p align="center"><img src="./resources/readme images/working of hall effect.png" alt="working of hall effect.png" width="300"/></p>
 </details>
- 
-# Mass Flow Rate (MFR) :
+
+
+<!-- ---------------------------------------------------------------------------------------------------------- -->
+# Mass Flow Rate (MFR) 
 ### Credits:  **Raman Saini** (https://github.com/Raman-Saini9)
 Speed of the fluid in the cooling system tubes 
 <p align="center"><img src="./resources/readme images/mfr.jpg" alt="mfr" width="300"/></p>
@@ -244,7 +250,7 @@ Speed of the fluid in the cooling system tubes
 </details>
 
 
-
+<!-- ---------------------------------------------------------------------------------------------------------- -->
 # User interface:
 ### Credits:  **Ayan Mahajan** (https://github.com/ayanhmm)
 GUI to display the data obtained from various sensors on the Dashboard as well as pit screen for the crew to observe any anomalies as well as log it for future references
@@ -330,7 +336,7 @@ This is a list of some errors that were faced during implementation of the pytho
    2. **Delay Error**: This can be caused if the delay set in the main_dash.py code is too long. this can be easily fixed by reducing the delay in root.after(). this delay should be equal to the delay in arduino code.
 </details>
 
-
+<!-- ---------------------------------------------------------------------------------------------------------- -->
 # Telemetry:
 ### Credits:  **Monis** (https://github.com/Monis6113)	and **Ayush Jain** (https://github.com/ayushjain143)
 This project involves telemetry i.e transmission and reception of data from various sensors such as Battery Management System, Motor Control, Mass Flow Rate Sensor,Hall Effect Sensor etc to a remote computer using HC-12 module on UART serial communication protocol.
@@ -366,10 +372,13 @@ The setup() function initializes the serial ports for debugging and telemetry da
 
 The loop() function checks if a full telemetry packet has been received by the software serial port. If a full packet is available, it is read into a byte array and then decapsulated into a TelemetryData object using the memcpy function.
 </details>
- 
+
+
+<!-- ---------------------------------------------------------------------------------------------------------- -->
 ## Credits
-1. **Satwik Jain** (https://github.com/satwikjain23): Handling the gigantic task of receiving data from BMS, and converting it from raw CANBUS data into useable form.
-2. **Harsh Srivastava** (https://github.com/harshsrivastava0): Taking in the raw canbus data of the motor controller and converting it into readable form.
-3. **Raman Saini** (https://github.com/Raman-Saini9): Handling the wiring and making sure each component receives appropriate power. Also extracting data from MFR.
-4.**Monis** (https://github.com/Monis6113): Helping in figuring out Data logging and telemetry.
-5. **Ayush Jain** (https://github.com/ayushjain143): Managing the telemetry aspect of the DAQ.
+1. **Harsh Srivastava** (https://github.com/harshsrivastava0): Taking in the raw canbus data of the motor controller and converting it into readable form, merging all codes to prepare a final DAQ.
+2. **Satwik Jain** (https://github.com/satwikjain23): Handling the gigantic task of receiving data from BMS, and converting it from raw CANBUS data into useable form.
+3. **Ayan Mahajan** (https://github.com/ayanhmm): Handling the entire UI aspect ranging from displaying data on screen after receiving it from arduino, managing the pit screen and performing data logging as well.Also extracting data from the hall effect sensor and documenting the DAQ.
+4. **Raman Saini** (https://github.com/Raman-Saini9): Handling the wiring and making sure each component receives appropriate power. Also extracting data from MFR.
+5. **Monis** (https://github.com/Monis6113): Helping in figuring out Data logging and telemetry.
+6. **Ayush Jain** (https://github.com/ayushjain143): Managing the telemetry aspect of the DAQ.
