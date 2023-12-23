@@ -86,6 +86,7 @@ For convenience purposes, downloadable files of the specified fonts have been ad
 1. Caution: https://fontmeme.com/polices/police-caution/
 2. Race Numbers: https://fontmeme.com/polices/police-racing-numbers/#previewtool
 3. Race Space: https://fontmeme.com/polices/police-race-space/
+4. Electrical: https://fontmeme.com/fonts/electrical-font/
 
 ## Connections
 1. Connect the CAN2.0 High and CAN2.0 Low wires of Motor Controller and BMS to the CANBUS wiring. Make sure these nodes are connected in parallel.
