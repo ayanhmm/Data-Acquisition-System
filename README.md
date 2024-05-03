@@ -136,22 +136,25 @@ This is a list of some errors that were faced during implementation of the pytho
 
 
 ## My Role
+Figuring out the **CAN Protocol** for transfer of data via CANBUS.Led the task of **Circuit design** of DAQ. Handling the wiring and making sure each component receives appropriate power.
+
+Worked on **telemetry** using HC12 RE module and other long range communication methods such as web hosting using wifi involving modules such as ESP8266, LoRa to establish communication between the formula student vehicle and ground station to transmit live data of the vehicle that is collected via a multitude of sensors.
+
 Handling the entire UI aspect ranging from displaying data on screen after receiving it from arduino, managing the pit screen and performing data logging as well. Added to this, I also worked on the Hall Effect sensor.
 
 For **Designing the UI Backgrounds**, I put my skills to action using designing softwares such as Adobe Illustrator and Canva along with various minor image editing softwares.
 
 <img src="./resources/readme images/pit bg.png" alt="pit" width="500"/>      <img src="./resources/readme images/dash bg.png" alt="pit" width="500"/>
 
-Once the backgrounds were finalised, I used the Tkinter and Serial Library of python to create a **Working UI** for both the dash and the pit screen.Using the Tkinter module, I was able to create *live graphs of the incoming date, a percentage based throttle bar as well as a analog-type speedometer*.The task of **Logging the Data** for future use was tackled using the csv and logging modules of python.Inorder to make inspection of the logged data more convenient, I created another program to display the logged data in a graphical manner(**Graph Logging**). Created a **list the errors** we faced while implementing the DAQ and the solutions we came up for them.
+Once the backgrounds were finalised, I used the Tkinter and Serial Library of python to create a **Working UI** for both the dash and the pit screen.Using the Tkinter module, I was able to create *live graphs of the incoming date, a percentage based throttle bar as well as a analog-type speedometer*.The task of **Logging the Data** for future use was tackled using the csv and logging modules of python.Inorder to make inspection of the logged data more convenient, I created another program to display the logged data in a graphical manner(**Graph Logging**). 
 
 Added to this, I also worked extensively upon the **Hall Effect Sensor** which was earliar being used to determine the wheel RPM of the vehicle.
 
-**Documented** the entire DAQ project so as to make sure no knowledge is lost and our juniors would have a guide to save their precious time.
+**Documented** the entire DAQ project so as to make sure no knowledge is lost and our juniors would have a guide to save their precious time.Also created a list the errors we faced while implementing the DAQ and the solutions we came up for them.
 
 
 ## Credits
-1. **Satwik Jain** (https://github.com/satwikjain23): Handling the gigantic task of receiving data from BMS, and converting it from raw CANBUS data into useable form.
+1. **Satwik Jain** (https://github.com/satwikjain23): Receiving data from BMS, and converting it from raw CANBUS data into useable form.
 2. **Harsh Srivastava** (https://github.com/harshsrivastava0): Taking in the raw canbus data of the motor controller and converting it into readable form.
-3. **Raman Saini** (https://github.com/Raman-Saini9): Handling the wiring and making sure each component receives appropriate power. Also extracting data from MFR.
-4.**Monis** (https://github.com/Monis6113): Helping in figuring out Data logging and telemetry.
-5. **Ayush Jain** (https://github.com/ayushjain143): Managing the telemetry aspect of the DAQ.
+3. **Raman Saini** (https://github.com/Raman-Saini9): extracting data from MFR.
+
